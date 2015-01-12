@@ -80,7 +80,7 @@ class Tumblpy(object):
         """
         response = self.client.get(self.access_token_url,
                                    params={'oauth_verifier': oauth_verifier})
-        authorized_tokens = dict(parse_qsl(response.content))
+        authorized_tokens = dict(parse_qsl(response.content.decode()))
         if not authorized_tokens:
             raise TumblpyError('Unable to decode authorized tokens.')
 
