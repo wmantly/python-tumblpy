@@ -90,6 +90,7 @@ class Tumblpy(object):
             res = res.decode()
 
         authorized_tokens = dict(parse_qsl(res))
+
         if not authorized_tokens:
             raise TumblpyError('Unable to decode authorized tokens.')
 
